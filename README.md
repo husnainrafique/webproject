@@ -28,5 +28,5 @@ Make sure you have the following installed before running the project:
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/your-repository.git
+   git clone https://github.com:husnainrafique/webproject.git
    cd Online-Products
