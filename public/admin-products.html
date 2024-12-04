@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Product Listing</title>
+    <link rel="stylesheet" href="styles/admin.css">
+    <script src="https://cdn.jsdelivr.net/npm/jwt-decode@3.1.2/build/jwt-decode.min.js"></script>
+
+</head>
+<body>
+    <header>
+        <h1 class="page-title">Admin - Product Listing</h1>
+        <nav>
+            <ul>
+                <li><a href="admin-upload.html">Bulk Upload</a></li>
+                <li><a href="admin-products.html">Product Listing</a></li>
+                <li><a id="authButton" href="login.html" class="footer">SIGN IN</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="main-content">
+            <h2 class="heading-2">Product List</h2>
+            <div class="add-new-product">
+                <input type="text" id="product-search" placeholder="Search by product name or category">
+                <button onclick="location.href='add-product.html'">Add New Product</button>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Category</th>
+                        <th>Price</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="product-list">
+                    <!-- Products will be dynamically inserted here -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer>
+        <p>Admin Panel - Product Listing</p>
+    </footer>
+
+    <script src="./admin-products.js">
+
+    </script>
+        <script src="./common.js"></script>
+
+</body>
+</html>

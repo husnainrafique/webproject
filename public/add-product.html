@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Add Product</title>
+    <link rel="stylesheet" href="styles/admin.css">
+    <script src="https://cdn.jsdelivr.net/npm/jwt-decode@3.1.2/build/jwt-decode.min.js"></script>
+
+</head>
+<body>
+    <header>
+        <h1 class="page-title">Admin - Add Product</h1>
+        <nav>
+            <ul>
+                <li><a href="admin-upload.html">Bulk Upload</a></li>
+                <li><a href="admin-products.html">Product Listing</a></li>
+                <li><a id="authButton" href="login.html" class="footer">SIGN IN</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <form id="product-form" enctype="multipart/form-data">
+            <h2 class="heading-2">Add Product</h2>
+            <label for="product-name">Product Name:</label>
+            <input type="text" id="product-name" name="name" required>
+            
+            <label for="product-description">Description:</label>
+            <textarea id="product-description" name="description" required></textarea>
+            
+            <label for="product-price">Price:</label>
+            <input type="number" id="product-price" min="0.10" max="1000.00" name="price" required>
+            
+            <label for="product-image">Image:</label>
+            <input type="file" id="product-image" name="productImage" accept="image/*">
+            
+            <label for="product-category">Category:</label>
+            <select id="product-category" name="category_id" required>
+                <!-- Categories will be loaded here -->
+            </select>
+
+
+            <button type="submit">Add Product</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>Admin Panel - Add Product</p>
+    </footer>
+
+    <script src="./add-product.js"></script>
+    <script src="./common.js"></script>
+</body>
+</html>
