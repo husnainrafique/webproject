@@ -13,7 +13,7 @@ console.log(`App running in ${isProduction ? "production" : "development"} mode.
 
 
 
-const { db, executeScript, runQuery } = require("./db");
+const { executeScript, runQuery } = require("./db");
 const productRoutes = require("./routes/productRoutes");
 const categoryRoutes = require("./routes/categoryRoutes");
 const userRoutes = require("./routes/usersRoutes");
