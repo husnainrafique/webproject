@@ -4,6 +4,15 @@ const path = require("path");
 const fs = require("fs");
 const sqlite3 = require("sqlite3").verbose();
 const csvParser = require("csv-parser");
+
+const dbPath = process.env.DB_FILE || "./my_database.db";
+const db = new sqlite3.Database(dbPath);
+const uploadDir = process.env.UPLOAD_DIR || "uploads";
+const isProduction = process.env.NODE_ENV === "production";
+console.log(`App running in ${isProduction ? "production" : "development"} mode.`);
+
+
+
 const { db, executeScript, runQuery } = require("./db");
 const productRoutes = require("./routes/productRoutes");
 const categoryRoutes = require("./routes/categoryRoutes");
@@ -11,7 +20,7 @@ const userRoutes = require("./routes/usersRoutes");
 const cartRoutes = require("./routes/cartRoutes");
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // Middleware
 app.set("view engine", "ejs");
